@@ -1,0 +1,2 @@
+# journalproject
+Self learning project
