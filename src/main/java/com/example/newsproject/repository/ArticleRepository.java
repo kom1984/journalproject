@@ -1,5 +1,9 @@
 package com.example.newsproject.repository;
 
-public interface ArticleRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.newsproject.model.ArticleModel;
+
+public interface ArticleRepository extends JpaRepository<ArticleModel,Long> {
 
 }
