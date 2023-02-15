@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.navbar-brand{
+display:flex;
+}
+.first
+{
+background-color:red;
+}
+.second
+{
+background-color:black;
+}
+
+#firstpart{
+padding:0px;
+border:0px;
+font-weight:bold;
+color:white;
+}
+#secondpart{
+	padding:0px;
+border:0px;
+color:white;
+}

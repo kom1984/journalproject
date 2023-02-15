@@ -13,13 +13,13 @@ public class ArticleController {
 	@Autowired
 	private ArticleService artiservice;
 	
-	@GetMapping("/index")
+	@GetMapping("/")
 	public String index(Model model)
 	{
 	model.addAttribute("article",artiservice.getAllArticles());
 	//addAttribute("article",artiservice.getAllArticles());
 	
-	return "/index";
+	return "index";
 	
 	}
 }
