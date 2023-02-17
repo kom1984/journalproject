@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>GOODNEWS ACCUEIL PAGE</title>
+<title>FIRST SPORTS PAGE</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/style.css}">
  <script th:src="@{/js/jquery-3.6.3.min.js}"></script>
@@ -18,10 +18,10 @@
 <!--<nav class="navbar navbar-light" style="background-color: #e3f2fd;">-->
   <div class="navbar-brand">
   <div class="first">
-  <a class="nav-link" id="firstpart"  href="#">GOOD</a>
+  <a class="nav-link" id="firstpart"  href="/index">GOOD</a>
   </div>
   <div class="second">
-  <a class="nav-link" id="secondpart"  href="#"> NEWS</a> 
+  <a class="nav-link" id="secondpart"  href="/index"> NEWS</a> 
   </div>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/index">Accueil <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item dropdown">
@@ -39,7 +39,7 @@
           Catégories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="sports1">Le Sport</a>
+          <a class="dropdown-item" href="#">Le Sport</a>
           <a class="dropdown-item" href="politique">Politique</a>
           <a class="dropdown-item" href="economie">Economie</a>
           <a class="dropdown-item" href="planete">Planète</a>
@@ -61,23 +61,28 @@
   
 </div>
 <main>
-<!--  <th:block th:each="i: ${#numbers.sequence(1, 10)}">-->
-<div class="container" th:each="articles: ${article}">
-<!--  <div class="container" th:each="articles: ${article}">
-<p th:each="i : ${#numbers.sequence(1, 10)}">
-<th:block th:each="i: ${#numbers.sequence(1, 5)}"></th:block>-->
-        <p  th:text="${articles.titre}" style="font-size:30px"></p>
-        <p th:text="${#dates.format(articles.date_ajouter,'dd/MM/yyyy')}"></p> 
-        <p th:text="${articles.description}"></p>  
-        <img th:src="@{${'/image/' + articles.image_article}}" alt="articlesimage">
-         <br>
-         
-         
-         <br>
-         <br>
-         
-     </div>
-    <!--   </th:block>-->
+
+
+<div class="container pb-5 pt-5">
+		
+			<div class="row justify around center"  >  <!-- card-img-top img-thumbnail rounded-pill-->				
+    				<div class="card my-3 col-4 border border-dark" th:each="sports:${sport}" >
+    				<div class="card-body">
+       					 <h5 class="card-title text-center" style="font-weight:bold;font-size:22px"th:text="${sports.titre}"></h5>
+       					 </div>
+     					 <img class="img-thumbnail" th:src="@{${'/image/' + sports.image_article}}" alt="sportsimage">
+     					 
+       					 <div class="card-body">
+          				 <a href="sports" data-th-href="@{'sports/'+${sports.id_article}}" class="btn" 
+          				  >Voir Plus..</a>
+          				  <!-- sec:authorize="isAuthenticated()"style="background-color:#40698C;color:#fff;margin:auto"-->
+          				  </div>
+      					</div>
+    				</div>
+  				
+  			</div>
+
+    
     </main>
     </div>
     

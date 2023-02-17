@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Result page</title>
+</head>
+<body>
+<h1>Result</h1>
+    <p th:text="'nom: ' + ${contact.nom}" />
+    <p th:text="'prénom: ' + ${contact.prenom}" />
+    <p th:text="'email: ' + ${contact.email}" />
+    <p th:text="'message: ' + ${contact.message}" />
+    <a href="/contact">Submit another message</a>
+</body>
+</html>

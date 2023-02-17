@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>GOODNEWS ACCUEIL PAGE</title>
+<title>HIGH-TECH PAGE</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/style.css}">
  <script th:src="@{/js/jquery-3.6.3.min.js}"></script>
@@ -39,11 +39,11 @@
           Catégories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="sports1">Le Sport</a>
+          <a class="dropdown-item" href="sports">Le Sport</a>
           <a class="dropdown-item" href="politique">Politique</a>
           <a class="dropdown-item" href="economie">Economie</a>
           <a class="dropdown-item" href="planete">Planète</a>
-          <a class="dropdown-item" href="hightech">High-Tech</a>
+          <a class="dropdown-item" href="#">High-Tech</a>
           
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="contact">Contact</a>
@@ -61,15 +61,13 @@
   
 </div>
 <main>
-<!--  <th:block th:each="i: ${#numbers.sequence(1, 10)}">-->
-<div class="container" th:each="articles: ${article}">
-<!--  <div class="container" th:each="articles: ${article}">
-<p th:each="i : ${#numbers.sequence(1, 10)}">
-<th:block th:each="i: ${#numbers.sequence(1, 5)}"></th:block>-->
-        <p  th:text="${articles.titre}" style="font-size:30px"></p>
-        <p th:text="${#dates.format(articles.date_ajouter,'dd/MM/yyyy')}"></p> 
-        <p th:text="${articles.description}"></p>  
-        <img th:src="@{${'/image/' + articles.image_article}}" alt="articlesimage">
+
+<div class="container" th:each="hightechs: ${hightech}">
+
+        <p  th:text="${hightechs.titre}" style="font-size:30px"></p>
+        <p th:text="${#dates.format(hightechs.date_ajouter,'dd/MM/yyyy')}"></p> 
+        <p th:text="${hightechs.description}"></p>  
+        <img th:src="@{${'/image/' + hightechs.image_article}}" alt="hightechsimage">
          <br>
          
          
@@ -77,7 +75,7 @@
          <br>
          
      </div>
-    <!--   </th:block>-->
+    
     </main>
     </div>
     

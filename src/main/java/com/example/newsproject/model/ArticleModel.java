@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +30,10 @@ public class ArticleModel {
 	private String Description;
 		
 	private Date date_ajouter;
+	
+	@ManyToOne
+	@JoinColumn(name="id_categorie",referencedColumnName = "id_categorie",insertable = true, updatable = true)
+	private CategorieModel id_categorie;
 	
 	
 
